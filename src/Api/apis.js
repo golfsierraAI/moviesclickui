@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const dataLoader = () =>
   axios
-    .get("http://localhost:8080/get/1")
+    .get("https://moviesclick.herokuapp.com/get/1")
     .then((response) => {
       return response;
     })
