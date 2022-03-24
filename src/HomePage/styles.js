@@ -2,15 +2,25 @@ import { makeStyles } from "@material-ui/core";
 
 const homepageStyles = makeStyles({
   root: {
-    height: "100vh",
     backgroundColor: "black",
-    padding: "20px",
+    padding: "20px 50px",
     backgroundSize: "cover",
     textShadow: "rgba(0, 0, 0, 1) 0px 0px 50px",
+    backgroundSize: "cover",
   },
   navbar: {
-    padding: "10px",
-    boxShadow: "5px 5px 5px 5px rgba(0, 0, 0, 0.2)",
+    padding: "10px 0px",
+  },
+  seachWrapper: {
+    position: "relative",
+  },
+  searchIcon: {
+    position: "absolute",
+    fontSize: "20px !important",
+    color: "#F5F5F5",
+    top: "50%",
+    left: "4%",
+    transform: "translate(-50%, -50%)",
   },
   name: {
     fontFamily: "Montserrat ,cursive",
@@ -20,7 +30,7 @@ const homepageStyles = makeStyles({
   },
   searchBar: {
     width: "70%",
-    padding: "0 10px ",
+    padding: "0 30px ",
     fontFamily: "Montserrat ,cursive",
     backgroundColor: "transparent",
     color: "#F5F5F5",
@@ -32,16 +42,6 @@ const homepageStyles = makeStyles({
     "&::placeholder": {
       color: "#F5F5F5",
     },
-  },
-  searchButton: {
-    backgroundColor: "#EEEEEE",
-    fontFamily: "Montserrat ,cursive",
-    fontWeight: 500,
-
-    border: "none",
-    borderRadius: 0,
-    width: "80px",
-    color: "black",
   },
   moviesDiv: {
     color: "white",
@@ -107,6 +107,12 @@ const homepageStyles = makeStyles({
     height: "10vh",
     justifyContent: "space-between",
     flexDirection: "column",
+  },
+  spinner: {
+    position: "absolute",
+    top: "45%",
+    left: "50%",
+    translate: "transform(-50%,-50%)",
   },
 });
 

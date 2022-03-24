@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import MovieList from "../MoviesList";
 import { homePageDataLoadStart, posterDataLoadStart } from "./action";
 import homepageStyles from "./styles";
+import { Search } from "@mui/icons-material";
+import { SpinnerDotted } from "spinners-react";
 
 const Homepage = () => {
   const classes = homepageStyles();
@@ -34,9 +36,9 @@ const Homepage = () => {
   }, [data]);
 
   if (posterData.data?.backdrop_path && backgroundElement.current)
-    backgroundElement.current.style.backgroundImage = `url(${poster})`;
+    backgroundElement.current.style.backgroundImage = `linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%), url(${poster})`;
 
-  return (
+  return false ? (
     <>
       <Grid
         className={classes.root}
@@ -54,13 +56,14 @@ const Homepage = () => {
             container
             justifyContent="space-between"
             direction="row"
+            className={classes.seachWrapper}
           >
+            <Search className={classes.searchIcon} />
             <input
               type="text"
               className={classes.searchBar}
-              placeholder="Search movies"
+              placeholder="Search..."
             />
-            <button className={classes.searchButton}>Search</button>
           </Grid>
         </Grid>
         <div className={classes.introDiv}>
@@ -100,6 +103,14 @@ const Homepage = () => {
         )}
       </div>
     </>
+  ) : (
+    <SpinnerDotted
+      className={classes.spinner}
+      size={70}
+      thickness={100}
+      speed={100}
+      color="#ffff"
+    />
   );
 };
 export default Homepage;
