@@ -1,8 +1,8 @@
 import axios from "axios";
 
-export const dataLoader = () =>
+export const dataLoader = (payload) =>
   axios
-    .get("https://moviesclick.herokuapp.com/get/1")
+    .get(`https://moviesclick.herokuapp.com/get/${payload}`)
     .then((response) => {
       return response;
     })

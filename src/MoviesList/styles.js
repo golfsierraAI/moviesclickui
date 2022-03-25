@@ -3,12 +3,10 @@ import { makeStyles } from "@material-ui/core";
 const imageCarouselStyles = makeStyles({
   imageDiv: {
     marginBottom: "20px",
-    marginRight: "10px",
-    height: "250px",
+    height: "225px",
     transition: "transform .3s",
     position: "relative",
     cursor: "pointer",
-    border: "1px solid grey",
     "& > svg": {
       visibility: "hidden",
     },
@@ -28,10 +26,17 @@ const imageCarouselStyles = makeStyles({
     right: 5,
     top: 5,
   },
+  wrapper: {
+    display: "flex",
+    position: "relative",
+    alignItems: "center",
+    width: "70%",
+    margin: "auto",
+  },
   root: {
     display: "flex",
     flexWrap: "wrap",
-    width: "60%",
+    width: "70%",
     justifyContent: "space-around",
     alignItems: "center",
     marginTop: "20px",
@@ -54,6 +59,15 @@ const imageCarouselStyles = makeStyles({
     left: "50%",
     transform: "translate(-50%, -50%)",
     color: "white",
+  },
+  navIcon: {
+    fontSize: "50px !important",
+    color: "white !important",
+    cursor: "pointer",
+    transition: "transform 0.3s !important",
+    "&:hover": {
+      transform: "scale(1.3)",
+    },
   },
 });
 export default imageCarouselStyles;

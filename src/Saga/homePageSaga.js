@@ -6,9 +6,9 @@ import {
   posterDataLoadSuccess,
 } from "../HomePage/action";
 import { dataLoader, posterLoader } from "../Api/apis";
-function* getDataLoadWorker() {
+function* getDataLoadWorker(payload) {
   try {
-    const data = yield call(dataLoader);
+    const data = yield call(dataLoader, payload.payload);
     if (data) {
       yield put(homePageDataLoadSuccess(data));
     }

@@ -1,5 +1,6 @@
-export const homePageDataLoadStart = () => ({
+export const homePageDataLoadStart = (payload) => ({
   type: "LOAD_DATA",
+  payload,
 });
 
 export const homePageDataLoadSuccess = (payload) => ({

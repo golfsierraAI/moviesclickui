@@ -96,6 +96,8 @@ const homepageStyles = makeStyles({
     color: "white",
     textAlign: "center",
     paddingTop: "50px",
+    height: "100vh",
+    position: "relative",
   },
   movieListHeading: {
     fontSize: "60px",
@@ -111,6 +113,12 @@ const homepageStyles = makeStyles({
   spinner: {
     position: "absolute",
     top: "45%",
+    left: "50%",
+    translate: "transform(-50%,-50%)",
+  },
+  spinner2: {
+    position: "absolute",
+    top: "50%",
     left: "50%",
     translate: "transform(-50%,-50%)",
   },

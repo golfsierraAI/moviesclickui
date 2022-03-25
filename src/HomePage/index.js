@@ -5,14 +5,15 @@ import MovieList from "../MoviesList";
 import { homePageDataLoadStart, posterDataLoadStart } from "./action";
 import homepageStyles from "./styles";
 import { Search } from "@mui/icons-material";
-import { SpinnerDotted } from "spinners-react";
+import { SpinnerCircular, SpinnerDotted } from "spinners-react";
 
 const Homepage = () => {
   const classes = homepageStyles();
   const dispatch = useDispatch();
   const backgroundElement = React.useRef(null);
 
-  const posterRef = React.useRef(Math.floor(Math.random() * 14));
+  const posterRef = React.useRef({ pos: Math.floor(Math.random() * 15) });
+  const currentPage = React.useRef(1);
 
   const storeState = useSelector((state) => {
     return state.homepageReducer;
@@ -28,15 +29,29 @@ const Homepage = () => {
     "https://image.tmdb.org/t/p/w1280" + posterData.data.backdrop_path;
 
   React.useEffect(() => {
-    dispatch(homePageDataLoadStart());
+    dispatch(homePageDataLoadStart(currentPage.current));
   }, []);
 
   React.useEffect(() => {
-    data && dispatch(posterDataLoadStart(data[posterRef.current].movieName));
+    data &&
+      dispatch(posterDataLoadStart(data[posterRef.current.pos].movieName));
   }, [data]);
 
   if (posterData.data?.backdrop_path && backgroundElement.current)
     backgroundElement.current.style.backgroundImage = `linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%), url(${poster})`;
+
+  const navigationManager = (event) => {
+    if ("forward".localeCompare(event.currentTarget.name) === 0) {
+      currentPage.current = currentPage.current + 1;
+      dispatch(homePageDataLoadStart(currentPage.current));
+    } else if ("backward".localeCompare(event.currentTarget.name) === 0) {
+      if (currentPage.current > 1) {
+        currentPage.current = currentPage.current - 1;
+        dispatch(homePageDataLoadStart(currentPage.current));
+      }
+    }
+  };
+  console.log(storeState);
 
   return data ? (
     <>
@@ -70,23 +85,23 @@ const Homepage = () => {
           <h1 className={classes.heading}>Watch movies on the go.</h1>
           <div className={classes.movieInfo}>
             <h3 className={classes.movieName}>
-              {data && data[posterRef.current].movieName}
+              {data && data[posterRef.current.pos].movieName}
             </h3>
             <h3 className={classes.movieDesc}>
               {posterData && posterData.data.overview}
             </h3>
             <div className={classes.genreWrapper}>
-              <h3>{data && data[posterRef.current].genre}</h3>
+              <h3>{data && data[posterRef.current.pos].genre}</h3>
               <h3 className={classes.quality}>
-                {data && data[posterRef.current].quality}
+                {data && data[posterRef.current.pos].quality}
               </h3>
-              <h3>{data && data[posterRef.current].ratings}</h3>
-              <h3>{data && data[posterRef.current].releaseYear}</h3>
+              <h3>{data && data[posterRef.current.pos].ratings}</h3>
+              <h3>{data && data[posterRef.current.pos].releaseYear}</h3>
             </div>
             <div className={classes.buttonsDiv}>
               <a
                 target="_blank"
-                href={data && data[posterRef.current].streamUrl}
+                href={data && data[posterRef.current.pos].streamUrl}
               >
                 <button className={classes.playButton}>Play</button>
               </a>
@@ -98,7 +113,17 @@ const Homepage = () => {
         {data?.length && posterRef.current && (
           <>
             <h1 className={classes.movieListHeading}>Watch latest movies</h1>
-            <MovieList data={data} />
+            {!storeState.loading ? (
+              <MovieList data={data} navigationManager={navigationManager} />
+            ) : (
+              <SpinnerCircular
+                className={classes.spinner2}
+                size={70}
+                thickness={100}
+                speed={100}
+                color="#ffff"
+              />
+            )}
           </>
         )}
       </div>
