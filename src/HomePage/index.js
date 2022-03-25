@@ -53,7 +53,7 @@ const Homepage = () => {
   };
   console.log(storeState);
 
-  return false ? (
+  return data ? (
     <>
       <Grid
         className={classes.root}
@@ -62,12 +62,16 @@ const Homepage = () => {
         ref={backgroundElement}
       >
         <Grid className={classes.navbar} container direction="row">
-          <Grid item xs={9} container direction="column">
+          <Grid
+            className={classes.nameWrapper}
+            item
+            container
+            direction="column"
+          >
             <h2 className={classes.name}>MoviesClick</h2>
           </Grid>
           <Grid
             item
-            xs={3}
             container
             justifyContent="space-between"
             direction="row"

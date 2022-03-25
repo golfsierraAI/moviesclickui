@@ -32,7 +32,7 @@ const imageCarouselStyles = makeStyles({
     alignItems: "center",
     width: "70%",
     margin: "auto",
-    "@media (max-width: 500px)": {
+    "@media (max-width: 700px)": {
       width: "100%",
       alignItems: "flex-end",
     },
@@ -46,7 +46,7 @@ const imageCarouselStyles = makeStyles({
     marginTop: "20px",
     margin: "auto",
     marginBottom: "20px",
-    "@media (max-width: 500px)": {
+    "@media (max-width: 700px)": {
       width: "100%",
     },
   },
@@ -79,7 +79,7 @@ const imageCarouselStyles = makeStyles({
   image: {
     height: "100%",
     width: "150px",
-    "@media (max-width: 500px)": {
+    "@media (max-width: 700px)": {
       width: "125px",
       height: "80%",
     },
