@@ -32,6 +32,10 @@ const imageCarouselStyles = makeStyles({
     alignItems: "center",
     width: "70%",
     margin: "auto",
+    "@media (max-width: 500px)": {
+      width: "100%",
+      alignItems: "flex-end",
+    },
   },
   root: {
     display: "flex",
@@ -40,8 +44,11 @@ const imageCarouselStyles = makeStyles({
     justifyContent: "space-around",
     alignItems: "center",
     marginTop: "20px",
-    marginBottom: "20px",
     margin: "auto",
+    marginBottom: "20px",
+    "@media (max-width: 500px)": {
+      width: "100%",
+    },
   },
   ratings: {
     position: "absolute",
@@ -67,6 +74,14 @@ const imageCarouselStyles = makeStyles({
     transition: "transform 0.3s !important",
     "&:hover": {
       transform: "scale(1.3)",
+    },
+  },
+  image: {
+    height: "100%",
+    width: "150px",
+    "@media (max-width: 500px)": {
+      width: "125px",
+      height: "80%",
     },
   },
 });

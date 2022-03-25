@@ -18,7 +18,7 @@ const MovieList = (props) => {
                 <span className={classes.quality}>{element.quality}</span>
                 <span className={classes.ratings}>{element.ratings}</span>
                 <PlayArrow className={classes.play} />
-                <img height="100%" width="150px" src={element.imageUrl}></img>
+                <img className={classes.image} src={element.imageUrl}></img>
               </div>
             </a>
           );

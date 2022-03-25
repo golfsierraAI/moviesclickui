@@ -88,7 +88,8 @@ const Homepage = () => {
               {data && data[posterRef.current.pos].movieName}
             </h3>
             <h3 className={classes.movieDesc}>
-              {posterData && posterData.data.overview}
+              {posterData &&
+                posterData?.data?.overview?.substring(0, 250) + "..."}
             </h3>
             <div className={classes.genreWrapper}>
               <h3>{data && data[posterRef.current.pos].genre}</h3>
@@ -98,14 +99,12 @@ const Homepage = () => {
               <h3>{data && data[posterRef.current.pos].ratings}</h3>
               <h3>{data && data[posterRef.current.pos].releaseYear}</h3>
             </div>
-            <div className={classes.buttonsDiv}>
-              <a
-                target="_blank"
-                href={data && data[posterRef.current.pos].streamUrl}
-              >
-                <button className={classes.playButton}>Play</button>
-              </a>
-            </div>
+            <a
+              target="_blank"
+              href={data && data[posterRef.current.pos].streamUrl}
+            >
+              <button className={classes.playButton}>Play</button>
+            </a>
           </div>
         </div>
       </Grid>
