@@ -153,12 +153,22 @@ const homepageStyles = makeStyles({
     top: "45%",
     left: "50%",
     translate: "transform(-50%,-50%)",
+    "@media (max-width: 500px)": {
+      alignItems: "center",
+      top: "40%",
+      left: "40%",
+    },
   },
   spinner2: {
     position: "absolute",
     top: "50%",
     left: "50%",
     translate: "transform(-50%,-50%)",
+    "@media (max-width: 500px)": {
+      alignItems: "center",
+      top: "40%",
+      left: "40%",
+    },
   },
 });
 

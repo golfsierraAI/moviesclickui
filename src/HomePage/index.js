@@ -53,7 +53,7 @@ const Homepage = () => {
   };
   console.log(storeState);
 
-  return data ? (
+  return false ? (
     <>
       <Grid
         className={classes.root}
