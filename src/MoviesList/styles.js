@@ -40,7 +40,7 @@ const imageCarouselStyles = makeStyles({
   root: {
     display: "flex",
     flexWrap: "wrap",
-    width: "70%",
+    width: "80%",
     justifyContent: "space-around",
     alignItems: "center",
     marginTop: "20px",

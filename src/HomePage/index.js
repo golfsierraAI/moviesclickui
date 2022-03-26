@@ -51,8 +51,7 @@ const Homepage = () => {
       }
     }
   };
-  console.log(storeState);
-
+  
   return data ? (
     <>
       <Grid

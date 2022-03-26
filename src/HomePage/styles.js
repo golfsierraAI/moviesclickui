@@ -19,7 +19,7 @@ const homepageStyles = makeStyles({
   nameWrapper: {
     flex: 7,
     "@media (max-width: 700px)": {
-      flex: 1,
+      flex: 2,
     },
   },
   seachWrapper: {
@@ -65,14 +65,15 @@ const homepageStyles = makeStyles({
     color: "white",
   },
   introDiv: {
-    height: "80vh",
     marginTop: "50px",
+    minHeight:"80vh",
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-around",
     "@media (max-width: 700px)": {
-      height: "50vh",
+      minHeight:"65vh",
     },
+    
   },
   heading: {
     color: "white",
@@ -86,19 +87,18 @@ const homepageStyles = makeStyles({
   },
   movieInfo: {
     display: "flex",
-    height: "60vh",
     flexDirection: "column",
     justifyContent: "space-around",
     "@media (max-width: 700px)": {
-      height: "30vh",
-      justifyContent: "space-between",
       alignItems: "center",
+      textAlign:"center"
     },
   },
   movieName: {
     color: "white",
     fontSize: "80px",
     fontWeight: 700,
+    marginBottom:"30px",
     "@media (max-width: 700px)": {
       fontSize: "2rem",
       "@media (max-width: 700px)": {
@@ -125,6 +125,7 @@ const homepageStyles = makeStyles({
     borderRadius: 0,
     width: "80px",
     height: "30px",
+    marginTop: "20px",
     color: "black",
     cursor: "pointer",
     "@media (max-width: 700px)": {
@@ -149,13 +150,13 @@ const homepageStyles = makeStyles({
     color: "white",
     display: "flex",
     width: "10%",
-    height: "10vh",
+    marginTop:"20px",
+    minHeight:"12vh",
     justifyContent: "space-between",
     flexDirection: "column",
     "@media (max-width: 700px)": {
       justifyContent: "space-around",
       width: "100%",
-      height: "10vh",
       alignItems: "center",
     },
   },
