@@ -81,6 +81,10 @@ const imageCarouselStyles = makeStyles({
   image: {
     height: "100%",
     width: "150px",
+    "@media (max-width: 700px)": {
+      height: "80%",
+    width: "110px",
+    },
   },
 });
 export default imageCarouselStyles;

@@ -70,7 +70,7 @@ const homepageStyles = makeStyles({
     flexDirection: "column",
     justifyContent: "space-around",
     "@media (max-width: 700px)": {
-      minHeight:"65vh",
+      minHeight:"75vh",
     },
     
   },
