@@ -67,7 +67,7 @@ const Homepage = () => {
             container
             direction="column"
           >
-            <h2 className={classes.name}>MoviesClick</h2>
+            <h2 className={classes.name}>MoviesClickX</h2>
           </Grid>
           <Grid
             item

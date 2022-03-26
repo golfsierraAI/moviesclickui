@@ -6,7 +6,6 @@ const homepageStyles = makeStyles({
     padding: "20px 50px",
     backgroundSize: "cover",
     textShadow: "rgba(0, 0, 0, 1) 0px 0px 50px",
-    backgroundSize: "cover",
     backgroundPosition: "center",
     "@media (max-width: 700px)": {
       padding: "10px 10px",
@@ -82,7 +81,6 @@ const homepageStyles = makeStyles({
     "@media (max-width: 700px)": {
       textAlign: "center",
       fontSize: "3rem",
-      textAlign: "center",
     },
   },
   movieInfo: {
