@@ -75,7 +75,7 @@ const imageCarouselStyles = makeStyles({
       transform: "scale(1.3)",
     },
     "@media (max-width: 700px)": {
-      margin:"50px",
+      marginBottom:"50px",
     },
   },
   image: {
