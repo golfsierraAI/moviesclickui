@@ -74,6 +74,9 @@ const imageCarouselStyles = makeStyles({
     "&:hover": {
       transform: "scale(1.3)",
     },
+    "@media (max-width: 700px)": {
+      margin:"50px",
+    },
   },
   image: {
     height: "100%",
