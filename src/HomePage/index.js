@@ -2,14 +2,20 @@ import { Grid } from "@material-ui/core";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import MovieList from "../MoviesList";
-import { homePageDataLoadStart, posterDataLoadStart } from "./action";
+import {
+  homePageDataLoadStart,
+  posterDataLoadStart,
+  searchDataLoadStart,
+} from "./action";
 import homepageStyles from "./styles";
 import { Search } from "@mui/icons-material";
-import { SpinnerCircular, SpinnerDotted } from "spinners-react";
+import { SpinnerDotted, SpinnerRoundFilled } from "spinners-react";
+import { useNavigate } from "react-router-dom";
 
 const Homepage = () => {
   const classes = homepageStyles();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const backgroundElement = React.useRef(null);
 
   const posterRef = React.useRef({ pos: Math.floor(Math.random() * 15) });
@@ -51,7 +57,10 @@ const Homepage = () => {
       }
     }
   };
-  console.log(storeState);
+
+  const searchPageChanger = () => {
+    navigate("/search");
+  };
 
   return data ? (
     <>
@@ -70,20 +79,7 @@ const Homepage = () => {
           >
             <h2 className={classes.name}>MoviesClick</h2>
           </Grid>
-          <Grid
-            item
-            container
-            justifyContent="space-between"
-            direction="row"
-            className={classes.seachWrapper}
-          >
-            <Search className={classes.searchIcon} />
-            <input
-              type="text"
-              className={classes.searchBar}
-              placeholder="Search..."
-            />
-          </Grid>
+          <Search className={classes.searchIcon} onClick={searchPageChanger} />
         </Grid>
         <div className={classes.introDiv}>
           <h1 className={classes.heading}>Watch movies on the go.</h1>
@@ -119,7 +115,7 @@ const Homepage = () => {
             {!storeState.loading ? (
               <MovieList data={data} navigationManager={navigationManager} />
             ) : (
-              <SpinnerCircular
+              <SpinnerRoundFilled
                 className={classes.spinner2}
                 size={70}
                 thickness={100}

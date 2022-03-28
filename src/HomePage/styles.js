@@ -6,7 +6,6 @@ const homepageStyles = makeStyles({
     padding: "20px 50px",
     backgroundSize: "cover",
     textShadow: "rgba(0, 0, 0, 1) 0px 0px 50px",
-    backgroundSize: "cover",
     backgroundPosition: "center",
     "@media (max-width: 700px)": {
       padding: "10px 10px",
@@ -30,14 +29,12 @@ const homepageStyles = makeStyles({
     },
   },
   searchIcon: {
-    position: "absolute",
-    fontSize: "20px !important",
+    fontSize: "30px !important",
     color: "#F5F5F5",
-    top: "50%",
-    left: "4%",
-    transform: "translate(-50%, -50%)",
-    "@media (max-width: 700px)": {
-      left: "10%",
+    cursor: "pointer",
+    transition: "transform 0.3s",
+    "&:hover": {
+      transform: "scale(0.8)",
     },
   },
   name: {
@@ -45,21 +42,6 @@ const homepageStyles = makeStyles({
     fontSize: "30px",
     fontWeight: 700,
     color: "white",
-  },
-  searchBar: {
-    width: "70%",
-    padding: "0 30px ",
-    fontFamily: "Montserrat ,cursive",
-    backgroundColor: "transparent",
-    color: "#F5F5F5",
-    borderRadius: 0,
-    border: "1px solid #F5F5F5",
-    "&:focus": {
-      outline: "none",
-    },
-    "&::placeholder": {
-      color: "#F5F5F5",
-    },
   },
   moviesDiv: {
     color: "white",
@@ -81,7 +63,6 @@ const homepageStyles = makeStyles({
     "@media (max-width: 700px)": {
       textAlign: "center",
       fontSize: "3rem",
-      textAlign: "center",
     },
   },
   movieInfo: {
@@ -97,7 +78,7 @@ const homepageStyles = makeStyles({
   },
   movieName: {
     color: "white",
-    fontSize: "80px",
+    fontSize: "60px",
     fontWeight: 700,
     "@media (max-width: 700px)": {
       fontSize: "2rem",
@@ -161,9 +142,9 @@ const homepageStyles = makeStyles({
   },
   spinner: {
     position: "absolute",
-    top: "45%",
+    top: "50%",
     left: "50%",
-    translate: "transform(-50%,-50%)",
+    transform: "translate(-50%,-50%)",
     "@media (max-width: 700px)": {
       alignItems: "center",
       top: "40%",
@@ -174,7 +155,7 @@ const homepageStyles = makeStyles({
     position: "absolute",
     top: "50%",
     left: "50%",
-    translate: "transform(-50%,-50%)",
+    transform: "translate(-50%,-50%)",
     "@media (max-width: 700px)": {
       alignItems: "center",
       top: "40%",

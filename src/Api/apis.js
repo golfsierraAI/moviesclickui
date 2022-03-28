@@ -21,3 +21,13 @@ export const posterLoader = (term) =>
     .catch((error) => {
       return error;
     });
+
+export const movieSearch = (payload) =>
+  axios
+    .post(`https://moviesclick.herokuapp.com/search/`, payload)
+    .then((response) => {
+      return response;
+    })
+    .catch((error) => {
+      return error;
+    });

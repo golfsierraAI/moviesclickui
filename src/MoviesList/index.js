@@ -5,11 +5,15 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { IconButton } from "@material-ui/core";
 const MovieList = (props) => {
   const classes = imageCarouselStyles();
+  console.log(props);
   return (
     <div className={classes.wrapper}>
-      <IconButton name="backward" onClick={props.navigationManager}>
-        <ArrowBackIosIcon className={classes.navIcon} />
-      </IconButton>
+      {props.navigationManager && (
+        <IconButton name="backward" onClick={props.navigationManager}>
+          <ArrowBackIosIcon className={classes.navIcon} />
+        </IconButton>
+      )}
+
       <div className={classes.root}>
         {props.data.map((element) => {
           return (
@@ -24,9 +28,11 @@ const MovieList = (props) => {
           );
         })}
       </div>
-      <IconButton name="forward" onClick={props.navigationManager}>
-        <ArrowForwardIosIcon className={classes.navIcon} />
-      </IconButton>
+      {props.navigationManager && (
+        <IconButton name="forward" onClick={props.navigationManager}>
+          <ArrowForwardIosIcon className={classes.navIcon} />
+        </IconButton>
+      )}
     </div>
   );
 };

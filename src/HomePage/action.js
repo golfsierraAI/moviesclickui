@@ -25,3 +25,21 @@ export const posterDataLoadSuccess = (payload) => ({
 export const posterDataLoadFail = () => ({
   type: "LOAD_POSTER_FAIL",
 });
+
+export const searchDataLoadStart = (payload) => ({
+  type: "LOAD_SEARCH",
+  payload,
+});
+
+export const searchDataLoadSuccess = (payload) => ({
+  type: "LOAD_SEARCH_SUCCESS",
+  payload,
+});
+
+export const searchDataLoadFail = () => ({
+  type: "LOAD_SEARCH_FAIL",
+});
+
+export const searchDataClear = () => ({
+  type: "LOAD_SEARCH_CLEAR",
+});

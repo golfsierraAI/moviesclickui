@@ -4,8 +4,10 @@ import {
   homePageDataLoadSuccess,
   posterDataLoadFail,
   posterDataLoadSuccess,
+  searchDataLoadFail,
+  searchDataLoadSuccess,
 } from "../HomePage/action";
-import { dataLoader, posterLoader } from "../Api/apis";
+import { dataLoader, movieSearch, posterLoader } from "../Api/apis";
 function* getDataLoadWorker(payload) {
   try {
     const data = yield call(dataLoader, payload.payload);
@@ -28,6 +30,17 @@ function* getPosterLoadWorker(payload) {
   }
 }
 
+function* searchMovieWorker(payload) {
+  try {
+    const data = yield call(movieSearch, payload.payload);
+    if (data) {
+      yield put(searchDataLoadSuccess(data));
+    }
+  } catch (error) {
+    yield put(searchDataLoadFail());
+  }
+}
+
 function* homePageDataLoadWatcher() {
   yield takeLatest("LOAD_DATA", getDataLoadWorker);
 }
@@ -36,6 +49,12 @@ function* posterLoadWatcher() {
   yield takeLatest("LOAD_POSTER", getPosterLoadWorker);
 }
 
+function* movieSearchWatcher() {
+  yield takeLatest("LOAD_SEARCH", searchMovieWorker);
+}
+
 export default function* homePageSaga() {
-  yield all([homePageDataLoadWatcher, posterLoadWatcher].map(fork));
+  yield all(
+    [homePageDataLoadWatcher, posterLoadWatcher, movieSearchWatcher].map(fork)
+  );
 }
