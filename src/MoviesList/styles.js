@@ -3,7 +3,6 @@ import { makeStyles } from "@material-ui/core";
 const imageCarouselStyles = makeStyles({
   imageDiv: {
     marginBottom: "20px",
-    height: "225px",
     transition: "transform .3s",
     position: "relative",
     cursor: "pointer",
@@ -21,8 +20,8 @@ const imageCarouselStyles = makeStyles({
     position: "absolute",
     backgroundColor: "yellow",
     color: "black",
-    padding: "2px 5px",
-    fontWeight: 700,
+    padding: "2px 4px",
+    fontWeight: 600,
     right: 5,
     top: 5,
   },
@@ -30,6 +29,7 @@ const imageCarouselStyles = makeStyles({
     display: "flex",
     position: "relative",
     alignItems: "center",
+    marginTop: "20px",
     width: "70%",
     margin: "auto",
     "@media (max-width: 700px)": {
@@ -40,10 +40,9 @@ const imageCarouselStyles = makeStyles({
   root: {
     display: "flex",
     flexWrap: "wrap",
-    width: "70%",
+    width: "80%",
     justifyContent: "space-around",
     alignItems: "center",
-    marginTop: "20px",
     margin: "auto",
     marginBottom: "20px",
     "@media (max-width: 700px)": {
@@ -75,13 +74,16 @@ const imageCarouselStyles = makeStyles({
     "&:hover": {
       transform: "scale(1.3)",
     },
+    "@media (max-width: 700px)": {
+      marginBottom:"50px",
+    },
   },
   image: {
     height: "100%",
     width: "150px",
     "@media (max-width: 700px)": {
-      width: "125px",
       height: "80%",
+    width: "110px",
     },
   },
 });
