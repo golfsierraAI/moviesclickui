@@ -48,14 +48,13 @@ const homepageStyles = makeStyles({
   },
   introDiv: {
     marginTop: "50px",
-    minHeight:"80vh",
+    minHeight: "80vh",
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-around",
     "@media (max-width: 700px)": {
-      minHeight:"75vh",
+      minHeight: "75vh",
     },
-    
   },
   heading: {
     color: "white",
@@ -72,14 +71,14 @@ const homepageStyles = makeStyles({
     justifyContent: "space-around",
     "@media (max-width: 700px)": {
       alignItems: "center",
-      textAlign:"center"
+      textAlign: "center",
     },
   },
   movieName: {
     color: "white",
     fontSize: "60px",
     fontWeight: 700,
-    marginBottom:"30px",
+    marginBottom: "30px",
     "@media (max-width: 700px)": {
       fontSize: "2rem",
       "@media (max-width: 700px)": {
@@ -131,8 +130,8 @@ const homepageStyles = makeStyles({
     color: "white",
     display: "flex",
     width: "10%",
-    marginTop:"20px",
-    minHeight:"12vh",
+    marginTop: "20px",
+    minHeight: "12vh",
     justifyContent: "space-between",
     flexDirection: "column",
     "@media (max-width: 700px)": {
@@ -148,8 +147,8 @@ const homepageStyles = makeStyles({
     transform: "translate(-50%,-50%)",
     "@media (max-width: 700px)": {
       alignItems: "center",
-      top: "40%",
-      left: "40%",
+      top: "50%",
+      left: "50%",
     },
   },
   spinner2: {
