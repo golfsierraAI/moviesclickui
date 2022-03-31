@@ -7,6 +7,7 @@ import homepageStyles from "./styles";
 import { Search } from "@mui/icons-material";
 import { SpinnerDotted, SpinnerRoundFilled } from "spinners-react";
 import { useNavigate } from "react-router-dom";
+import GoogleAds from "../Googleads";
 
 const Homepage = () => {
   const classes = homepageStyles();
@@ -122,6 +123,7 @@ const Homepage = () => {
           </>
         )}
       </div>
+      <GoogleAds />
     </>
   ) : (
     <SpinnerDotted
